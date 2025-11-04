@@ -133,6 +133,11 @@ body{
 
 @include mq($bp-md){
 
+    .wrapper{
+        min-block-size: 100dvh;
+        place-content: center;
+    }
+
     .grid{
         display: grid;
         grid-template-columns: repeat(4, 1fr); /* 1fr 1fr 1fr 1fr */
@@ -150,6 +155,20 @@ body{
 
             &--purple{
                 grid-column: 1 / span 2;
+                position: relative;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top:0;
+                    right: 3rem;
+                    inline-size: 6rem;
+                    block-size: 6rem;
+                    background: url("../images/bg-pattern-quotation.svg");
+                    opacity: 0.5;
+                    pointer-events: none;
+
+                }
             }
 
             &--gray{
